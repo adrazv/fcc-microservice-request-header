@@ -24,6 +24,13 @@ app.get('/api/hello', function (req, res) {
   res.json({ greeting: 'hello API' });
 });
 
+// first test
+app.get("/api/whoami", (req, res) =>{
+
+  const ipaddress = req.ip;
+
+  res.json({ ipaddress });
+});
 
 
 
