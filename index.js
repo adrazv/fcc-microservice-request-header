@@ -27,9 +27,15 @@ app.get('/api/hello', function (req, res) {
 // first test
 app.get("/api/whoami", (req, res) =>{
 
-  const ipaddress = req.ip;
+  const ipaddress = req.ip; // extract IP address from the request
+  const language = req.headers['accept-language'].split(',')[0]; // extract the first preferred language 
+  // from the Accept-Language header
 
-  res.json({ ipaddress });
+  res.json({ 
+              ipaddress,
+              language // add language to the response
+          });
+          
 });
 
 
