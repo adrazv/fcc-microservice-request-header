@@ -30,10 +30,12 @@ app.get("/api/whoami", (req, res) =>{
   const ipaddress = req.ip; // extract IP address from the request
   const language = req.headers['accept-language'].split(',')[0]; // extract the first preferred language 
   // from the Accept-Language header
+  const software = req.headers['user-agent']; // extract os + browser
 
   res.json({ 
               ipaddress,
-              language // add language to the response
+              language, // add language to the response
+              software
           });
           
 });
